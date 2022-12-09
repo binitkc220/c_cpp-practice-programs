@@ -1,0 +1,29 @@
+For input:-
+struct Array A;
+A=input();
+
+For display:-
+Display(A);
+
+Functions:-
+Set(strut_array,index,element); ->sets given element at given index
+Append(struct_array,element); ->appends given element at last
+Insert(struct_array,index,element); ->inserts given element at given index
+Get(struct_array,index); ->prints element at given index
+Delete(struct_array,index); ->deletes element prints that element
+Min(struct_array); -> prints the minimum element in Array
+Max(struct_array); -> prints the maximum element in Array
+Sum_Avg(struct_array); -> prints the sum and average of elements of Array
+Reserve(struct_array); -> reverses the array
+LeftShift(struct_array); -> left shifts the elements of array
+RightShift(struct_array); -> right shifts the elements of array
+isSorted(struct_array); -> return true if array is sorted otherwise false
+
+SearchElement(struct_array,key) -> prints the index of element if found. It calls BinarySearch() function if array is sorted otherwise calls LinearSearch() function for searching the key. It contains two function for searching element:
+i.BinarySearch(struct_array,key) -> returns the searched element using binary search algorithm
+ii.LinearSearch(struct_array,key) -> returns the searched element using linear search algorithm
+
+NegativeOnLeft(struct_array) -> returns array with all negative elements shifted to left of array
+
+merge
+set operation
