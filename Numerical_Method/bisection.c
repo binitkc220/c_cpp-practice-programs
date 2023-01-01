@@ -7,13 +7,6 @@ float f(float x)
     return x*sin(x)+cos(x);
 }
 
-float absolute(float x)
-{
-    if(x > 0)
-        return x;
-    else
-        return -x;
-}
 int main()
 {
     float a,b,m,root,n;
@@ -46,7 +39,7 @@ int main()
             a = m;
         root = m;
         i++;
-    }while((absolute(f(m)))>0.0005 && i<=min_steps);
+    }while((fabs(f(m)))>0.0005 && i<=min_steps);
     printf("\n\tRoot = %.4f",root);
     return 0;
 }
