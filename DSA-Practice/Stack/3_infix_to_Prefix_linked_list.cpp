@@ -89,7 +89,7 @@ int precendence(char x)
         return -1;
 }
 
-char * infixToPostfix(char *exp)
+char * infixToPrefix(char *exp)
 {
     int i=0,j=0;
     char t, *prefixexp;
@@ -138,6 +138,6 @@ char * infixToPostfix(char *exp)
 int main()
 {
     char infix[]="(A - B/C) * (A/K-L)";
-    cout << infixToPostfix(infix);
+    cout << infixToPrefix(infix);
     return 0;
 }
