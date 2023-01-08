@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "MAN.C": "cpp",
+        "BLA.C": "cpp",
+        "DDA.C": "cpp",
+        "Ellipse.C": "cpp",
+        "*.tcc": "cpp",
+        "Circle.C": "cpp"
+    }
+}
