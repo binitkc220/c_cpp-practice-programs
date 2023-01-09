@@ -72,6 +72,22 @@ void delete(struct Node *p, int pos)
     printf("Deleted Element = %d\n",x);
 }
 
+void search(struct Node *p, int key)
+{
+    int i=0;
+    while(p!=NULL)
+    {
+        if(p->data==key)
+        {
+            printf("Key found at index %d\n",i);
+            return;
+        }
+        i++;
+        p=p->next;
+    }
+    printf("Key not found!\n");
+}
+
 void display(struct Node *p)
 {
     while(p!=NULL)
@@ -99,4 +115,9 @@ int main()
     display(head);
     delete(head,3);
     display(head);
+
+    search(head,3);
+    search(head,5);
+
+    return 0;
 }
