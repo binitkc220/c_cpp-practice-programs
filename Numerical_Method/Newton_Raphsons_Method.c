@@ -13,7 +13,8 @@ float df(float x)
 
 int main()
 {
-    float x0,x1,abs_error,count=0;
+    float x0,x1,abs_error;
+    int count=0;
     printf("Enter the initial x0 : ");
     scanf("%f",&x0);
     printf("i\tx(i)\tx(i+1)\tAbsolute Error\n");

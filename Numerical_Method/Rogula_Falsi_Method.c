@@ -8,7 +8,8 @@ float f(float x)
 }
 int main()
 {
-    float a,b,c,count=0;
+    float a,b,c;
+    int count=0;
     printf("Enter the interval : ");
     scanf("%f%f",&a,&b);
     printf("i\ta\tb\tc\tf(c)\n");
