@@ -45,6 +45,18 @@ class List
             }
             return x;
         }
+        void search(int key)
+        {
+            for(int i=0;i<current_pos;i++)
+            {
+                if(list[i]==key)
+                {
+                    cout << "Key found at index " << i << endl;
+                    return;
+                }
+            }
+            cout << "Key not found" << endl;
+        }
         void display()
         {
             for(int i=0;i<current_pos;i++)
@@ -61,7 +73,8 @@ int main()
     l1.display();
     cout << "Deleted element at position 2 = " << l1.deleteAtPos(2) << endl;
     l1.display();
-    l1.insertAtPos(2,5);
-    l1.display();
+    l1.search(2);
+    // l1.insertAtPos(2,5);
+    // l1.display();
     return 0;
 }

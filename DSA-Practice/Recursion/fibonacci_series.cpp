@@ -40,4 +40,9 @@ int main()
     for(int i=0;i<10;i++)
         F[i] = -1;
     printf("%d",fib(8));
+
+    for(int i=0;i<=5;i++)
+    {
+        std::cout << fib_using_normal_recursion(i) << "\t";
+    }
 }
