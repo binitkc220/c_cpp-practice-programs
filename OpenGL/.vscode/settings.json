@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "iostream": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/dependencies/GLM/glm"
+}

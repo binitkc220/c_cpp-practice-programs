@@ -1,0 +1,72 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "g++",
+            "linux": {
+                "args": [
+                    "${workspaceRoot}/src/${fileBasename}",
+                    // Include all source files.
+                    "${workspaceRoot}/dependencies/GLAD/src/glad.c",
+
+                    // Include .cpp files here (These are for .h file code)
+                    //"${workspaceRoot}/src/shader.cpp",
+                    
+                    "-g",
+                    "--std=c++17",
+                    "-I${workspaceRoot}/dependencies/GLFW/include",
+                    "-I${workspaceFolder}/dependencies/GLAD/include",
+                    "-I${workspaceFolder}/dependencies/GLUT/include",
+                    "-I${workspaceFolder}/dependencies/GLM",
+                    "-lopengl32",
+                    "-L${workspaceRoot}/dependencies/GLFW/lib-mingw",
+                    "-L${workspaceRoot}/dependencies/GLUT/lib",
+                    "-static",
+                    "-lglfw3dll",
+                    "-lglut",
+                    "-lGLU",
+                    "-lGL",
+                    "-lm",
+                    "-o",
+                    "${workspaceRoot}/builds/windows/${fileBasenameNoExtension}"
+                ]
+            },
+            "windows": {
+                "args": [
+                    "${workspaceFolder}/src/${fileBasename}",
+                    // Include all source files.
+                    "${workspaceFolder}/dependencies/GLAD/src/glad.c",
+
+                    // Include .cpp files here (These are for .h file code)
+                    //"${workspaceRoot}/src/shader.cpp",
+                    
+                    "-g",
+                    "--std=c++17",
+                    "-I${workspaceFolder}/dependencies/GLFW/include",
+                    "-I${workspaceFolder}/dependencies/GLAD/include",
+                    "-I${workspaceFolder}/dependencies/GLUT/include",
+                    "-I${workspaceFolder}/dependencies/GLM",
+                    "-lopengl32",
+                    "-L${workspaceFolder}/dependencies/GLFW/lib-mingw",
+                    "-L${workspaceFolder}/dependencies/GLUT/lib",
+                    "-static",
+                    "-lglfw3dll",
+                    "-lglu32",
+                    "-lfreeglut",
+                    "-o",
+                    "${workspaceFolder}/builds/windows/${fileBasenameNoExtension}",
+                    "&&",
+                    "${workspaceFolder}/builds/windows/${fileBasenameNoExtension}.exe",
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+    ]
+}
