@@ -3,7 +3,6 @@
 This project compiles using the g++ command. So, you need to have the MinGW Instalation Manager installed, from there you can install the following packages:
 
 **[mingw64](https://drive.google.com/file/d/1nyl19SG6_yGVfrkhHa4vf5tl3s3bzWBO/view?usp=sharing)**
-Rename mingw64 to mingw and then copy that folder to C: drive
 
 **Dependencies:**
 
