@@ -22,11 +22,13 @@ class Tree
         void Postorder(Node *p);
         void displayPostorder(){Postorder(root);}
         void displayLevelorder();
+        int HeightofTree(Node *p);
         int AllNodes(Node *p);
         int LeafNodes(Node *p);
         int Nodesdeg2(Node *p);
         int Nodesdeg12(Node *p);
         int Nodesdeg1(Node *p);
+        int Height(){return HeightofTree(root);}
         int countAllNodes(){return AllNodes(root);}
         int countLeafNodes(){return LeafNodes(root);}
         int countNodesdeg2(){return Nodesdeg2(root);}
@@ -121,6 +123,14 @@ void Tree::displayLevelorder(){
     }
 }
 
+int Tree::HeightofTree(Node *p){
+    int x,y;
+    if(p==NULL) return 0;
+    x = HeightofTree(p->lchild);
+    y = HeightofTree(p->rchild);
+    return x>y?x+1:y+1;
+}
+
 int Tree::AllNodes(Node *p){
     if(p==NULL)
         return 0;
@@ -195,7 +205,8 @@ int main()
     t.displayPostorder();
     printf("\nLevelorder Traversal : \n");
     t.displayLevelorder();
-    printf("\nNo. of Nodes are %d\n",t.countAllNodes());
+    printf("\nHeight of the tree is %d\n",t.Height());
+    printf("No. of Nodes are %d\n",t.countAllNodes());
     printf("No. of leaf Nodes are %d\n",t.countLeafNodes());
     printf("No. of Nodes with degree 2 are %d\n",t.countNodesdeg2());
     printf("No. of Nodes with degree 1 or 2 are %d\n",t.countNodesdeg12());

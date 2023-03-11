@@ -12,7 +12,7 @@ void displayMatrix(float a[][n+n])
         {
             if(j==n)
                 printf(":\t");
-            printf("%.2f\t",a[i][j]);
+            printf("%.3f\t",a[i][j]);
         }
         printf("\n");
     }
@@ -72,6 +72,7 @@ int main()
                 a[i][j] = 0;
         }
     }
+    printf("The augmented matrix is \n");
     convertToDiagonal(a);
     printf("\nHence the inverse matrix is : \n");
     for(int i=0;i<n;i++)

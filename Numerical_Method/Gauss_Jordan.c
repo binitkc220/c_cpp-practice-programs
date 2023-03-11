@@ -10,7 +10,7 @@ void displayMatrix(float a[][n+1])
         printf("\t");
         for(int j=0;j<n+1;j++)
         {
-            printf("%.2f\t",a[i][j]);
+            printf("%.3f\t",a[i][j]);
         }
         printf("\n");
     }
