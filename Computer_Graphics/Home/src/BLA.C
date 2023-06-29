@@ -35,13 +35,14 @@ void BLA(int x1,int y1, int x2, int y2)
 
 int main()
 {
-	int gm, gd=DETECT;
+	
 	int x1,y1,x2,y2;
 
 	//Turbo C
     //initgraph(&gm,&gd,"C:\\TC\\BGI");
     
     //VS Code
+	int gm, gd=DETECT;
     char data[] = "C:\\MinGW\\lib\\libbgi.a";
 	initgraph(&gd,&gm,data);
 	

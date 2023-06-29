@@ -1,0 +1,2 @@
+execute:
+	g++ src/colorfull_balls.cpp dependencies/GLAD/src/glad.c -g --std=c++17 -Idependencies/GLFW/include -Idependencies/GLAD/include -Idependencies/GLUT/include -Idependencies/GLM -lopengl32 -Ldependencies/GLFW/lib-mingw -Ldependencies/GLUT/lib -static -lglfw3dll -lglu32 -lfreeglut -o builds/windows/colorfull_balls && builds/windows/colorfull_balls.exe
