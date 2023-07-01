@@ -1,7 +1,27 @@
 #include<stdio.h>
 #include<string.h>
-#include<math.h>
 #define N 4    //no. of bits
+
+char* strrev(char *str)  
+{  
+    int i, len, temp;  
+    len = strlen(str);
+    for (i = 0; i < len/2; i++)  
+    {  
+        temp = str[i];  
+        str[i] = str[len - i - 1];  
+        str[len - i - 1] = temp;  
+    }
+    return str;
+}
+
+int power(int a, int b) {
+    int result=1;
+    for(int i=0;i<b;i++)
+        result *= a;
+    return result;
+}
+  
 
 char AND(char a, char b) {
     if(a=='1' && b=='1')
@@ -28,7 +48,7 @@ char XOR(char a, char b) {
     return OR(AND(NOT(a),b),AND(a,NOT(b)));
 }
 
-char* padding(char* num) {
+void padding(char* num) {
     int len = strlen(num);
     int paddingZeros = N - len;
     for (int i = len; i >= 0; i--){
@@ -55,7 +75,7 @@ char nbitadder(char* n1, char* n2, char*sum, char c) {
     return c;
 }
 
-char* toBin(int n, char*a){
+void toBin(int n, char*a){
     int rem=0,i=0;
     char bin[N+1];
     while(n!=0){
@@ -73,13 +93,13 @@ int toDec(char*a){
     int len=strlen(a)-1,num,sum=0;
     for(int i=0;i<strlen(a);i++) {
         num = a[i]=='1'?1:0;
-        sum = sum + num*pow(2,len);
+        sum = sum + num*power(2,len);
         len--;
     }
     return sum;
 }
 
-char *RightShift(char C, char *A, char *Q) {
+void RightShift(char C, char *A, char *Q) {
     int i;
     for(i=strlen(Q)-1;i>0;i--)
         Q[i] = Q[i-1];

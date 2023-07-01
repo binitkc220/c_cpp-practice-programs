@@ -3,6 +3,19 @@
 #include <math.h>
 #define N 6 // no. of bits
 
+char* strrev(char *str)  
+{  
+    int i, len, temp;  
+    len = strlen(str);
+    for (i = 0; i < len/2; i++)  
+    {  
+        temp = str[i];  
+        str[i] = str[len - i - 1];  
+        str[len - i - 1] = temp;  
+    }
+    return str;
+}
+
 char AND(char a, char b)
 {
     if (a == '1' && b == '1')
@@ -88,7 +101,7 @@ void nbitsubtractor(char num1[], char num2[], char *difference)
     nbitadder(n1, resulttwoscomplement, difference);
 }
 
-char *toBin(int num, char *a)
+void toBin(int num, char *a)
 {
     int rem = 0, i = 0;
     char bin[N + 1];
